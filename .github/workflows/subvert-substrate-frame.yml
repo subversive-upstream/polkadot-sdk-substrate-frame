@@ -10,11 +10,12 @@ on:
       SUBVERT_TOKEN:
         required: true
 
+# ls -d */ | sed 's#/##'|tr '\n' ','
 jobs:
   subvert-substrate:
     strategy:
       matrix:
-        crate: [alliance,asset-conversion,asset-rate]
+        crate: [alliance,asset-conversion,asset-rate,assets,atomic-swap,aura,authority-discovery,authorship,babe,bags-list,balances,beefy,beefy-mmr,benchmarking,bounties,broker,child-bounties,collective,contracts,conviction-voting,core-fellowship,democracy,election-provider-multi-phase,election-provider-support,elections-phragmen,examples,executive,fast-unstake,glutton,grandpa,identity,im-online,indices,insecure-randomness-collective-flip,lottery,membership,merkle-mountain-range,message-queue,multisig,nft-fractionalization,nfts,nicks,nis,node-authorization,nomination-pools,offences,paged-list,preimage,proxy,ranked-collective,recovery,referenda,remark,root-offences,root-testing,safe-mode,salary,scheduler,scored-pool,session,society,staking,statement,state-trie-migration,sudo,support,system,timestamp,tips,transaction-payment,transaction-storage,treasury,try-runtime,tx-pause,uniques,utility,vesting,whitelist]
     name: Publish to subversive-upstream/polkadot-sdk-substrate-frame-${{ matrix.crate }} subrepo
     runs-on: ubuntu-latest
     environment: Release
