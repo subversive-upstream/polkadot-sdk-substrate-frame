@@ -15,7 +15,87 @@ jobs:
   subvert-substrate:
     strategy:
       matrix:
-        crate: [alliance,asset-conversion,asset-rate,assets,atomic-swap,aura,authority-discovery,authorship,babe,bags-list,balances,beefy,beefy-mmr,benchmarking,bounties,broker,child-bounties,collective,contracts,conviction-voting,core-fellowship,democracy,election-provider-multi-phase,election-provider-support,elections-phragmen,examples,executive,fast-unstake,glutton,grandpa,identity,im-online,indices,insecure-randomness-collective-flip,lottery,membership,merkle-mountain-range,message-queue,multisig,nft-fractionalization,nfts,nicks,nis,node-authorization,nomination-pools,offences,paged-list,preimage,proxy,ranked-collective,recovery,referenda,remark,root-offences,root-testing,safe-mode,salary,scheduler,scored-pool,session,society,staking,statement,state-trie-migration,sudo,support,system,timestamp,tips,transaction-payment,transaction-storage,treasury,try-runtime,tx-pause,uniques,utility,vesting,whitelist]
+        crate:
+          [
+            alliance,
+            asset-conversion,
+            asset-rate,
+            assets,
+            atomic-swap,
+            aura,
+            authority-discovery,
+            authorship,
+            babe,
+            bags-list,
+            balances,
+            beefy,
+            beefy-mmr,
+            benchmarking,
+            bounties,
+            broker,
+            child-bounties,
+            collective,
+            contracts,
+            conviction-voting,
+            core-fellowship,
+            democracy,
+            election-provider-multi-phase,
+            election-provider-support,
+            elections-phragmen,
+            examples,
+            executive,
+            fast-unstake,
+            glutton,
+            grandpa,
+            identity,
+            im-online,
+            indices,
+            insecure-randomness-collective-flip,
+            lottery,
+            membership,
+            merkle-mountain-range,
+            message-queue,
+            multisig,
+            nft-fractionalization,
+            nfts,
+            nicks,
+            nis,
+            node-authorization,
+            nomination-pools,
+            offences,
+            paged-list,
+            preimage,
+            proxy,
+            ranked-collective,
+            recovery,
+            referenda,
+            remark,
+            root-offences,
+            root-testing,
+            safe-mode,
+            salary,
+            scheduler,
+            scored-pool,
+            session,
+            society,
+            staking,
+            statement,
+            state-trie-migration,
+            sudo,
+            support,
+            system,
+            timestamp,
+            tips,
+            transaction-payment,
+            transaction-storage,
+            treasury,
+            try-runtime,
+            tx-pause,
+            uniques,
+            utility,
+            vesting,
+            whitelist,
+          ]
     name: Publish to subversive-upstream/polkadot-sdk-substrate-frame-${{ matrix.crate }} subrepo
     runs-on: ubuntu-latest
     environment: Release
@@ -24,7 +104,7 @@ jobs:
     steps:
       - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4
         with:
-          fetch-depth: '0'
+          fetch-depth: "0"
       - uses: cucumber/action-publish-subrepo@main
         id: subvert-substrate-frame-crate
         continue-on-error: true
